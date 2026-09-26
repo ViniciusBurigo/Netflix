@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um site simples parecido com a netflix">
+
+    <title>Netflix</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho do Site-->
+    <header>
+        <h1>Netflix</h1>
+
+        <div class="actions">
+            <input type="text" id="search" placeholder="Buscar...">
+            <!-- Depois colocar método-->
+            <button>Dark mode</button>
+        </div>
+    </header>
+
+    <!-- Conteudo principal da página -->
+     <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Destaques da semana</h2>
+                <p>Os melhores filmes selecionados para você</p>
+
+                <button class="btn primary">Assistir</button>
+                <button class="btn secundary">Mais info</button>
+            </div>
+        </section>
+        <section class="catalogo">
+            <h2>Populares</h2>
+
+            <div class="carousel" id="movies"></div>
+        </section>
+     </main>
+
+     <!-- Rodapé do site -->
+     <footer>
+        <p>&copy; 2026 - Desenvolvido por Vinicius Burigo</p>
+     </footer>
+
+     <script src="script.js"></script>
+</body>
+</html>

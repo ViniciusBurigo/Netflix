@@ -8,6 +8,7 @@ body {
     background: #141414;
     color: #fff;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -28,6 +29,19 @@ header {
 input {
     padding: 5px;
     border-radius: 5px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#botao {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .hero {
@@ -86,6 +100,7 @@ input {
     transition: transform 0.3s ease;
     transform-origin: center;
     z-index: 1;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -96,4 +111,17 @@ input {
 footer {
     text-align: center;
     padding: 20px;
+}
+
+body.light {
+    background: #f4f4f4;
+    color: #141414;
+}
+
+body.light header {
+    background: #fff;
+}
+
+body.light .hero {
+    background-color: #f4f4f4;
 }

@@ -7,6 +7,7 @@
     <meta name="description" content="Um site simples parecido com a Netflix">
     <title>Netflix</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 </head>
 
 <body>
@@ -15,9 +16,10 @@
         <h1 class="logo">Netflix</h1>
 
         <div class="actions">
-            <input type="text" id="search" placeholder="Buscar...">
-            <!-- Depois colocar método-->
-            <button>Dark mode</button>
+            <input type="search" id="search" placeholder="Buscar filmes..." aria-label="Buscar filmes">
+            <button id="botao" type="button" aria-label="Alternar tema">
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -36,6 +38,11 @@
             <h2>Populares</h2>
 
             <div class="carousel" id="movies"></div>
+        </section>
+        <section class="catalogo">
+            <h2>Lançamentos</h2>
+
+            <div class="carousel" id="movies2"></div>
         </section>
     </main>
 

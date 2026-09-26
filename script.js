@@ -16,61 +16,73 @@ for (let i = 1; i <= 10; i++) {
     });
 }
 
-function render(lista) {
-    const container = document.getElementById("movies");
+function render(lista, containerId) {
+    const container = document.getElementById(containerId);
 
-    lista.forEach(m => {
-        container.innerHTML += `
-        <div classe="card">
-            <img src="${m.imagem}" />
+    container.innerHTML = lista.map(m => `
+        <article class="card">
+            <img src="${m.imagem}" alt="Capa de ${m.nome}">
             <p>${m.nome}</p>
-        </div>
-        `;
-    });
+        </article>
+    `).join("");
 }
 
-function render2(lista) {
-    const container = document.getElementById("movies2");
-
-    lista.forEach(m => {
-        container.innerHTML += `
-        <div classe="card">
-            <img src="${m.imagem}" />
-            <p>${m.nome}</p>
-        </div>
-        `;
-    });
-}
-
-render(movies);
-render2(movies2);
+render(movies, "movies");
+render(movies2, "movies2");
 
 // =====================================================================================
 
 const banners = [
-    "https://www.picsum.photos/200/300?random=200",
-    "https://www.picsum.photos/200/300?random=201",
-    "https://www.picsum.photos/200/300?random=202",
-    "https://www.picsum.photos/200/300?random=203",
-    "https://www.picsum.photos/200/300?random=204"
-]
+    "https://www.picsum.photos/1200/600?random=200",
+    "https://www.picsum.photos/1200/600?random=201",
+    "https://www.picsum.photos/1200/600?random=202",
+    "https://www.picsum.photos/1200/600?random=203",
+    "https://www.picsum.photos/1200/600?random=204"
+];
 
 const hero = document.querySelector(".hero");
 let bannerAtual = 0;
 
-function mudaBanner(){
+function mudaBanner() {
     hero.style.backgroundImage = `
     linear-gradient(to top, #141414, transparent),
     url('${banners[bannerAtual]}')
     `;
     bannerAtual++; 
 
-    if(bannerAtual >= 4) {
+    if (bannerAtual >= banners.length) {
         bannerAtual = 0;
     }
 }
 
 mudaBanner();
 
-// Cham esse método a cada 3 segundos
+// Chama esse método a cada 3 segundos
 setInterval(mudaBanner, 3000);
+
+function mudaTema() {
+    document.body.classList.toggle("light");
+
+    const icone = document.querySelector('#botao i');
+
+    // valida se ta com tema claro ou escuro
+    if (document.body.classList.contains("light")) {
+        icone.classList.remove("fa-sun");
+        icone.classList.add("fa-moon");
+    } else {
+        icone.classList.remove("fa-moon");
+        icone.classList.add("fa-sun");
+    }
+}
+
+document.getElementById("botao").addEventListener("click", mudaTema);
+
+document.getElementById("search").addEventListener("input", event => {
+    const termo = event.target.value.trim().toLowerCase();
+    const filtrar = lista => lista.filter(movie =>
+        movie.nome.toLowerCase().includes(termo)
+    );
+
+    render(filtrar(movies), "movies");
+    render(filtrar(movies2), "movies2");
+});

@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Um site simples parecido com a Netflix">
-    <title>Netflix</title>
+    <title>Netflix Clone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Cabeçalho do Site-->
-    <header>
+    <header id="main-header">
         <h1 class="logo">Netflix</h1>
 
         <div class="actions">
-            <input type="text" id="search" placeholder="Buscar...">
-            <!-- Depois colocar método-->
-            <button>Dark mode</button>
+            <input type="text" id="search" placeholder="Títulos, gêneros...">
+            <button id="theme-toggle">Modo Claro</button>
         </div>
     </header>
 
@@ -26,15 +25,17 @@
         <section class="hero">
             <div class="hero-content">
                 <h2>Destaques da semana</h2>
-                <p>Os melhores filmes selecionados para você</p>
+                <p>Os melhores filmes selecionados exclusivamente para você assistir hoje.</p>
 
-                <button class="btn primary">Assistir</button>
-                <button class="btn secondary">Mais info</button>
+                <div class="hero-buttons">
+                    <button class="btn primary">Assistir</button>
+                    <button class="btn secondary">Mais info</button>
+                </div>
             </div>
         </section>
+
         <section class="catalogo">
             <h2>Populares</h2>
-
             <div class="carousel" id="movies"></div>
         </section>
     </main>
@@ -43,6 +44,7 @@
     <footer>
         <p>&copy; 2026 - Desenvolvido por Vinicius Burigo</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

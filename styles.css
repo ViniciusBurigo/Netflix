@@ -44,8 +44,8 @@ input {
     padding: 10px 15px;
     margin-right: 10px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
     margin-top: 10px;
 }
 
@@ -67,6 +67,10 @@ input {
     display: flex;
     gap: 10px;
     overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
 }
 
 .card img {
